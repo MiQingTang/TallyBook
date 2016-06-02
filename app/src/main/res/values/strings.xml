@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">记账本</string>
+    <string name="title_activity_login">登录记账本</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <!--d登录页面-->
+    <string name="reg_text">注册一个</string>
+    <string name="title_activity_reg">用户注册</string>
+    <string name="prompt_password_agarn">Again</string>
+    <string name="action_regst">注册</string>
+    <string name="title_activity_main">主界面</string>
+    <string name="subscribe_my_category">我的类别</string>
+    <string name="subscribe_manager_category_info_2">(点击去除)</string>
+    <string name="subscribe_more_category">fds</string>
+    <string name="title_activity_fenlei">分类</string>
+    <string name="title_activity_book">记账单</string>
+    <string name="title_activity_consumption">消费统计</string>
+    <string name="title_activity_userinfo">个人中心</string>
+    <string name="title_activity_month">月度报表</string>
+    <string name="title_activity_budget">消费预算</string>
+</resources>
