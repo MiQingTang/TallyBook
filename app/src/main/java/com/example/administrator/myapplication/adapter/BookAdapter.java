@@ -9,7 +9,6 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.example.administrator.myapplication.R;
-import com.example.administrator.myapplication.activity.MyBookActivity;
 import com.example.administrator.myapplication.constans.TimeUtils;
 import com.example.administrator.myapplication.entity.MyBook;
 

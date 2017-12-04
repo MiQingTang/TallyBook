@@ -64,7 +64,6 @@ public class MainActivity extends AbActivity {
     }
 
     @Event(value = {
-            R.id.tv_accounts,//我的记账
             R.id.tv_Report,//月度报表
             R.id.tv_statistics,//消费统计
             R.id.tv_type,//类别维护
@@ -75,9 +74,6 @@ public class MainActivity extends AbActivity {
         TextView textView = (TextView) view;
         textView.setTextColor(getRandomColor());
         switch (view.getId()) {
-            case R.id.tv_accounts://我的记账
-                startActivity(new Intent(this, MyBookActivity.class));
-                break;
             case R.id.tv_Report://月度报表
                 if (Constans.user_typs == null || Constans.user_typs.size() == 0) {
                     Toast.makeText(MainActivity.this, "请链接网络！", Toast.LENGTH_SHORT).show();
@@ -105,6 +101,7 @@ public class MainActivity extends AbActivity {
             case R.id.tv_userinfo://个人信息
                 startActivity(new Intent(this, UserInfoActivity.class));
                 break;
+            default:break;
         }
     }
 

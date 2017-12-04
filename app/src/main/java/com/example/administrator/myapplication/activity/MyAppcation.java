@@ -2,6 +2,8 @@ package com.example.administrator.myapplication.activity;
 
 import android.app.Application;
 
+import com.example.administrator.myapplication.constans.Cfg;
+
 import org.xutils.BuildConfig;
 import org.xutils.x;
 
@@ -15,7 +17,7 @@ public class MyAppcation extends Application {
     public void onCreate() {
         super.onCreate();
         // 初始化  SDK
-        Bmob.initialize(this, "5131fc70552ed08b8e3ff978a3420761");
+        Bmob.initialize(this, Cfg.BMOB_KEY);
         x.Ext.init(this);
         // 是否输出debug日志, 开启debug会影响性能.
         x.Ext.setDebug(BuildConfig.DEBUG);

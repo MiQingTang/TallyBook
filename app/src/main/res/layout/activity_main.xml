@@ -7,27 +7,6 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/tv_type"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="类别\n维护" />
-
-        <TextView
-            android:id="@+id/tv_accounts"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="我的\n记账" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="消费\n统计" />
+            android:text="已购\n订单" />
 
         <TextView
             android:id="@+id/tv_Report"
@@ -48,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="月度\n报表" />
+            android:text="余票\n查询" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="消费\n预算" />
+            android:text="我要\n订票" />
 
         <TextView
             android:id="@+id/tv_userinfo"
