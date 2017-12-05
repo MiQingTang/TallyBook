@@ -3,12 +3,30 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_8b3fff35d4fb4ce08aa8ab0daab86dbd9a683b1a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="F:\TallyBook\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e6d7da5131c8b60a072a12846018f309a803416b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\virtual_Device\.android\build-cache\5205b895d747cb69151bac9ecb09858e6390f76d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fdebc244f24c29a963d3a159f07119993b70aadb\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -25,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0ce1dff454903f6c03271f30b55d31ac6105c161">
+        sha1="0b0e3ba9a26bfbeb212a7a0cca6a987e58eb1946">
         <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9a3d3c6de431c87382afc37644ecaa3db5551a83\classes.dex" />
     </item>
     <item

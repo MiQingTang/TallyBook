@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.utils;
+package hznu.edu.cn.utils;
 
 import android.text.TextUtils;
 import android.util.Log;

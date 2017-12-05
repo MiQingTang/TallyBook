@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.constans;
+package hznu.edu.cn.constans;
 
 /**
  * Created by Administrator on 2017/12/4.

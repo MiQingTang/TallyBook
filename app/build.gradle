@@ -4,7 +4,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId 'com.miser.notebook'
+        applicationId 'hznu.edu.cn.activity'
         minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
@@ -25,15 +25,17 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
-    compile 'cn.bmob.android:bmob-sdk:3.4.6'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'//自`V3.4.3版本`开始，使用`okhttp`优化SDK的网络框架
-    compile 'com.squareup.okio:okio:1.4.0'
-    compile 'com.android.support:support-v4:23.2.1'
+    //自`V3.4.3版本`开始，使用`okhttp`优化SDK的网络框架
     //注:bmob-sdk:3.4.6需要依赖okhttp（2.4.0）、okio（2.4.0），如果需要兼容Android6.0系统，
     // 则还需要添加support-v4（23.2.1）及org.apache.http.legacy包，具体可查看下面注释[1]的解释
 
-    testCompile 'junit:junit:4.12'
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okio:okio:1.4.0'
+    compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'org.xutils:xutils:3.3.34'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }

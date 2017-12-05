@@ -1,8 +1,8 @@
-package com.example.administrator.myapplication.activity;
+package hznu.edu.cn.activity;
 
 import android.app.Application;
 
-import com.example.administrator.myapplication.constans.Cfg;
+import hznu.edu.cn.constans.Cfg;
 
 import org.xutils.BuildConfig;
 import org.xutils.x;

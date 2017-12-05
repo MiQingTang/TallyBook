@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.activity;
+package hznu.edu.cn.activity;
 
 import android.content.Intent;
 import android.os.Handler;

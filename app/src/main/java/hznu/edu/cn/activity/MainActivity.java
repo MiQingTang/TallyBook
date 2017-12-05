@@ -1,9 +1,8 @@
-package com.example.administrator.myapplication.activity;
+package hznu.edu.cn.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.administrator.myapplication.R;
 

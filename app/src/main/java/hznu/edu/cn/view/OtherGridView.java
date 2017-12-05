@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.view;
+package hznu.edu.cn.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

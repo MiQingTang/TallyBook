@@ -1,20 +1,18 @@
-package com.example.administrator.myapplication.activity;
+package hznu.edu.cn.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 
 import com.example.administrator.myapplication.R;
-import com.example.administrator.myapplication.utils.L;
+import hznu.edu.cn.utils.L;
 
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
 
