@@ -1,4 +1,4 @@
-package com.example.administrator.myapplication.constans;
+package com.example.administrator.myapplication.utils;
 
 import android.content.Context;
 

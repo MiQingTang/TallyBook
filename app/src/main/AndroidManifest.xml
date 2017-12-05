@@ -72,7 +72,7 @@
             android:label="@string/title_activity_userinfo"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.BudgetActivity"
+            android:name=".activity.BuyActivity"
             android:label="@string/title_activity_budget"
             android:theme="@style/AppTheme"></activity>
     </application>

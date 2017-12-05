@@ -13,7 +13,7 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/tv_statistics"
+            android:id="@+id/tv_ygdd"
             style="@style/main_textview_style"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -21,7 +21,7 @@
             android:text="已购\n订单" />
 
         <TextView
-            android:id="@+id/tv_Report"
+            android:id="@+id/tv_ypcx"
             style="@style/main_textview_style"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -35,7 +35,7 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/tv_yusuan"
+            android:id="@+id/tv_dp"
             style="@style/main_textview_style"
             android:layout_width="0dp"
             android:layout_height="match_parent"
