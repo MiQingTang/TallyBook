@@ -49,6 +49,7 @@ public class MainActivity extends AbActivity {
             case R.id.tv_ygdd:
                 break;
             case R.id.tv_dp:
+                startActivity(new Intent(this, BuyActy.class));
                 break;
             case R.id.tv_userinfo:
                 startActivity(new Intent(this, UserInfoActivity.class));

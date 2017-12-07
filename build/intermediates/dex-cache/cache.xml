@@ -21,6 +21,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.2_6f92e0bc9cc6edb2f6dfe23a3b24d6c5a560f179\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\virtual_Device\.android\build-cache\eaf2c8db81e7775e0a4138ac29897ab7c5255378\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7b66d88476e57666bbb1487366f2d7432413f9e0">
+        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_85ea73a156684ba3f4930cc370b3d131233e7867\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Android\virtual_Device\.android\build-cache\5205b895d747cb69151bac9ecb09858e6390f76d\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
