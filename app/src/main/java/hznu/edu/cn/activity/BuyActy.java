@@ -130,7 +130,11 @@ public class BuyActy extends AppCompatActivity {
                 if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end)) {
                     Toast.makeText(this, "输入错误！", Toast.LENGTH_SHORT).show();
                 } else {
-
+                    String resul =
+                            "车次：G" + (int) (Math.random() * 1000) + "\n" +
+                                    "从" + start + "到" + end + "\n"
+                                    + start + "5:31分出发\n"
+                                    + end + "19:62到达\n票价(￥):680";
                 }
                 break;
             case R.id.button4://订
@@ -145,9 +149,9 @@ public class BuyActy extends AppCompatActivity {
 
                     }
                 };
-                 int Year;
-                 int Month;
-                 int Day;
+                int Year;
+                int Month;
+                int Day;
                 Calendar cal = Calendar.getInstance();
                 Year = cal.get(Calendar.YEAR);
                 Log.i("wxy", "year" + Year);
