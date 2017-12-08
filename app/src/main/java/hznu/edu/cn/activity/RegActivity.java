@@ -7,11 +7,15 @@ import android.widget.Toast;
 
 
 import com.example.administrator.myapplication.R;
+
+import hznu.edu.cn.entity.User;
 import hznu.edu.cn.utils.L;
 
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import java.util.ArrayList;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
@@ -52,9 +56,10 @@ public class RegActivity extends AbActivity {
             return;
         }
         //注册用户
-        BmobUser bu = new BmobUser();
+        User bu = new User();
         bu.setUsername(username);
         bu.setPassword(pass);
+        bu.setCcr(new ArrayList<String>());
         //注意：不能用save方法进行注册
         bu.signUp(this, new SaveListener() {
             @Override
