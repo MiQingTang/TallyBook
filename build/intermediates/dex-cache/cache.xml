@@ -2,49 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\e46dc3770b3f496ca8101ccd788e70b29dc53190\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_8b3fff35d4fb4ce08aa8ab0daab86dbd9a683b1a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e6d7da5131c8b60a072a12846018f309a803416b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.2_6f92e0bc9cc6edb2f6dfe23a3b24d6c5a560f179\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\virtual_Device\.android\build-cache\eaf2c8db81e7775e0a4138ac29897ab7c5255378\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7b66d88476e57666bbb1487366f2d7432413f9e0">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_85ea73a156684ba3f4930cc370b3d131233e7867\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\virtual_Device\.android\build-cache\5205b895d747cb69151bac9ecb09858e6390f76d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fdebc244f24c29a963d3a159f07119993b70aadb\classes.dex" />
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_8418f598927ca7dda22335583c548fd2162ad03e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -56,22 +20,139 @@
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\mpandroidchartlibrary-2-2-4_5efcfb79412a3733c6c34c34d5f80105af7fa540.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\3ee506511c83fb43e6056d8068cdd48f1944fa44\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="0b0e3ba9a26bfbeb212a7a0cca6a987e58eb1946">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9a3d3c6de431c87382afc37644ecaa3db5551a83\classes.dex" />
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_3571fac56ceae51042318100f87f9f137bc89387.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\libs\mpandroidchartlibrary-2-2-4.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\eaf2c8db81e7775e0a4138ac29897ab7c5255378\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="e5455fb794bfcbeb75da252dffd907794614f7fd">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\2\mpandroidchartlibrary-2-2-4_5efcfb79412a3733c6c34c34d5f80105af7fa540\classes.dex" />
+        sha1="7b66d88476e57666bbb1487366f2d7432413f9e0">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_a7213802f5899bc9e286fa1cff9b2f226bfd47ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\gson-2.8.2_6f92e0bc9cc6edb2f6dfe23a3b24d6c5a560f179.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0_1a88588d86205825a3225019b657d26fc4d4e22f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\06bca9e9eeff37e339aeb559108f1b92b96d0436\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_15ff9bebc46660b27b5ad67cea1020b5fbe241f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Users\Administrator\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_592ed5e90d94e03816f10578687c9d2735db9003.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okio-1.4.0_a05532bc788a554b357d24e9f35162ad99c67f00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\e022c8080522d67c8740a4e7721df23bb090340e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_dc72eca95184a7535382284ffd9012fba6dce516.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\910a61e3e8576b9c60f8797a68b26c747f92ac4d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_4ffff5d90bf636ef7ead4882aa102f13d35a2363.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\dcc0bd5925975d82909ea6bd72a722e1e9ae790e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_461795addc3f44e54b9edc495c684cce493d63d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a26d5c92cfabeeb35868ed25f67c59f5acadeb73\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f9cf048337fc945472f258d5541de7ed0994c8c2">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_1e0e54544fadcb79dd5213dc9ab6bd938fec3a96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.bmob.android\bmob-sdk\3.4.6\41f54bb2846705eea0de5df48ddbcba378bd54e5\bmob-sdk-3.4.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="41f54bb2846705eea0de5df48ddbcba378bd54e5">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\bmob-sdk-3.4.6_7d7e4f9bf21d91854ea3a5666e6b0fc585868498.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\923b7d1840bc3190d497e3d50eb558584bf43cc1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_04e5b93fdb308cd86c3830675a4e17349f1e7540.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\e46dc3770b3f496ca8101ccd788e70b29dc53190\output\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_993d2adf17b22034064be9d00e75ca8183acbd52.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_fc69c3b77672ffaa69e2aed4d339844152d221a4.jar" />
     </item>
 
 </items>

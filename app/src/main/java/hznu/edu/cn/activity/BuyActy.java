@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,20 +24,20 @@ import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
 
-import org.w3c.dom.Text;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
-import org.xutils.http.request.AssetsRequest;
 import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
 
-import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 import hznu.edu.cn.constans.Cfg;
 import hznu.edu.cn.entity.Batch;
+import hznu.edu.cn.entity.CpInfo;
 import hznu.edu.cn.entity.LCInfo;
 import hznu.edu.cn.entity.User;
 
@@ -47,7 +49,7 @@ public class BuyActy extends AppCompatActivity {
     private TagFlowLayout id_flowlayout;
 
     private List<Batch> batch;
-    private TextView textView;
+    private TagFlowLayout tag_cp;
     List<String> mVals = new ArrayList<String>();
     private TagAdapter tagAdapter = new TagAdapter<String>(mVals) {
         @Override
@@ -76,6 +78,9 @@ public class BuyActy extends AppCompatActivity {
             }
         }
     };
+    private RadioGroup rg_type;
+    private TagAdapter cp_tagAdapter;
+    List<CpInfo> cp_mVals = new ArrayList<CpInfo>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,8 @@ public class BuyActy extends AppCompatActivity {
         findview();
         mVals.addAll(User.getCurrentUser(BuyActy.this, User.class).getCcr());
         tagAdapter.notifyDataChanged();
+        cp_tagAdapter.notifyDataChanged();
+
     }
 
     private void query(String start, String end, String date) {
@@ -122,27 +129,41 @@ public class BuyActy extends AppCompatActivity {
 
     private void findview() {
         et_start = (EditText) findViewById(R.id.et_start);
-        textView = (TextView) findViewById(R.id.textView);
+        tag_cp = (TagFlowLayout) findViewById(R.id.textview);
         et_end = (EditText) findViewById(R.id.et_end);
+        rg_type = (RadioGroup) findViewById(R.id.rg_type);
         id_flowlayout = (TagFlowLayout) findViewById(R.id.id_flowlayout);
         id_flowlayout.setAdapter(tagAdapter);
+
+        tag_cp.setAdapter(cp_tagAdapter);
 
     }
 
     public void onClick(final View view) {
         switch (view.getId()) {
             case R.id.button3://查
+                RadioButton rb = (RadioButton) findViewById(rg_type.getCheckedRadioButtonId());
+
                 String start = et_start.getText().toString();
                 String end = et_end.getText().toString();
-                if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end)) {
+                int num = (int) (Math.random() * 1000);
+                String type = rb.getText().toString();
+
+                if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end) || TextUtils.isEmpty(type)) {
                     Toast.makeText(this, "输入错误！", Toast.LENGTH_SHORT).show();
                 } else {
-                    String resul =
-                            "车次：G" + (int) (Math.random() * 1000) + "\n" +
-                                    "从" + start + "到" + end + "\n"
-                                    + start + "5:31分出发\n"
-                                    + end + "19:62到达\n票价(￥):680";
-                    textView.setText(resul);
+                    for (int i = 0; i < (int) (Math.random() * 2) + 1; i++) {
+                        CpInfo info = new CpInfo(
+                                start,
+                                end,
+                                mVals.get(i),
+                                start + "5:31分出发\n" + end + "19:62到达",
+                                "车次：G" + num
+                        );
+                        info.setType(type);
+                        cp_mVals.add(info);
+                        cp_tagAdapter.notifyDataChanged();
+                    }
                     findViewById(R.id.button4).setEnabled(true);
                 }
                 break;
@@ -154,14 +175,7 @@ public class BuyActy extends AppCompatActivity {
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(BuyActy.this, "正在支付！", Toast.LENGTH_SHORT).show();
-                                Toast.makeText(BuyActy.this, "您已经订购成功！", Toast.LENGTH_SHORT).show();
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        finish();
-                                    }
-                                }, 2000);
+                                buy();
                             }
                         })
                         .create().show();
@@ -221,5 +235,36 @@ public class BuyActy extends AppCompatActivity {
                 break;
         }
 
+    }
+
+    private void buy() {
+        for (int i : tag_cp.getSelectedList()) {
+            CpInfo info = cp_mVals.get(i);
+            for (int j :
+                    id_flowlayout.getSelectedList()) {
+                info.setMoney("¥" + 300);
+                info.setLoc("15车25A");
+                info.save(BuyActy.this, new SaveListener() {
+                    @Override
+                    public void onSuccess() {
+
+                    }
+
+                    @Override
+                    public void onFailure(int i, String s) {
+
+                    }
+                });
+            }
+        }
+
+        Toast.makeText(BuyActy.this, "正在支付！", Toast.LENGTH_SHORT).show();
+        Toast.makeText(BuyActy.this, "您已经订购成功！", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, 2000);
     }
 }

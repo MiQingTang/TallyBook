@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="support-v4-23.3.0">
     <CLASSES>
-      <root url="jar://D:/Android/virtual_Device/.android/build-cache/8f210d2747758c334a36946e38fead52082238e3/output/jars/libs/internal_impl-23.3.0.jar!/" />
-      <root url="jar://D:/Android/virtual_Device/.android/build-cache/8f210d2747758c334a36946e38fead52082238e3/output/jars/classes.jar!/" />
-      <root url="file://D:/Android/virtual_Device/.android/build-cache/8f210d2747758c334a36946e38fead52082238e3/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/e46dc3770b3f496ca8101ccd788e70b29dc53190/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/e46dc3770b3f496ca8101ccd788e70b29dc53190/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/e46dc3770b3f496ca8101ccd788e70b29dc53190/output/jars/libs/internal_impl-23.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/23.3.0/support-v4-23.3.0-sources.jar!/" />
+      <root url="jar://E:/Users/Administrator/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/23.3.0/support-v4-23.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

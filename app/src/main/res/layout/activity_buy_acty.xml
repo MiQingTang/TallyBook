@@ -60,13 +60,13 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/id_flowlayout"
+        android:layout_below="@+id/rg_type"
         android:layout_centerHorizontal="true"
         android:onClick="onClick"
         android:text="查询" />
 
-    <TextView
-        android:id="@+id/textView"
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -74,14 +74,16 @@
         android:layout_below="@+id/button3"
         android:background="#33aa44"
         android:padding="30dp"
-        android:text="查询结果" />
+        app:max_select="1">
+
+    </com.zhy.view.flowlayout.TagFlowLayout>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/button3"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textview"
         android:enabled="false"
         android:onClick="onClick"
         android:text="订购" />
@@ -90,10 +92,46 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
         android:layout_alignParentEnd="true"
-        android:onClick="onClick"
         android:layout_below="@+id/button2"
-        android:text="添加乘车人" />
+        android:onClick="onClick"
+        android:text="添加乘车人"
+        android:textColor="@color/colorPrimary" />
+
+    <RadioGroup
+        android:id="@+id/rg_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/id_flowlayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_wz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无座" />
+
+        <RadioButton
+            android:id="@+id/rb_yz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬座" />
+
+        <RadioButton
+            android:id="@+id/rb_yw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硬卧" />
+
+        <RadioButton
+            android:id="@+id/rb_rw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="软卧" />
+    </RadioGroup>
 
 </RelativeLayout>
