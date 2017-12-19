@@ -79,8 +79,37 @@ public class BuyActy extends AppCompatActivity {
         }
     };
     private RadioGroup rg_type;
-    private TagAdapter cp_tagAdapter;
     List<CpInfo> cp_mVals = new ArrayList<CpInfo>();
+    private TagAdapter cp_tagAdapter = new TagAdapter<CpInfo>(cp_mVals) {
+
+
+        @Override
+        public View getView(FlowLayout parent, int position, CpInfo cpInfo) {
+            TextView tv = new TextView(BuyActy.this);
+            tv.setText(cpInfo.toString());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                tv.setBackground(getDrawable(R.drawable.normal_bg));
+            }
+            return tv;
+        }
+
+        @Override
+        public void onSelected(int position, View view) {
+            super.onSelected(position, view);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.setBackground(getDrawable(R.drawable.checked_bg));
+            }
+        }
+
+        @Override
+        public void unSelected(int position, View view) {
+            super.unSelected(position, view);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.setBackground(getDrawable(R.drawable.normal_bg));
+            }
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,7 +172,6 @@ public class BuyActy extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.button3://查
                 RadioButton rb = (RadioButton) findViewById(rg_type.getCheckedRadioButtonId());
-
                 String start = et_start.getText().toString();
                 String end = et_end.getText().toString();
                 int num = (int) (Math.random() * 1000);
@@ -156,9 +184,8 @@ public class BuyActy extends AppCompatActivity {
                         CpInfo info = new CpInfo(
                                 start,
                                 end,
-                                mVals.get(i),
                                 start + "5:31分出发\n" + end + "19:62到达",
-                                "车次：G" + num
+                                "G" + num
                         );
                         info.setType(type);
                         cp_mVals.add(info);
@@ -168,8 +195,9 @@ public class BuyActy extends AppCompatActivity {
                 }
                 break;
             case R.id.button4://订
+                String num1 = cp_mVals.get(tag_cp.getSelectedList().iterator().next()).getNum();
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("确认订购这一车次的车票吗？")
+                builder.setMessage("确认订购[" + num1 + "]这一车次的车票吗？")
                         .setTitle("提示")
                         .setNegativeButton("再看看", null)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -242,8 +270,9 @@ public class BuyActy extends AppCompatActivity {
             CpInfo info = cp_mVals.get(i);
             for (int j :
                     id_flowlayout.getSelectedList()) {
-                info.setMoney("¥" + 300);
-                info.setLoc("15车25A");
+                info.setMoney("¥" + Math.random() * 300 + 100);
+                info.setName(mVals.get(j));
+                info.setLoc((Math.random() * 20 + 1) + "车" + (Math.random() * 90 + 1) + "A");
                 info.save(BuyActy.this, new SaveListener() {
                     @Override
                     public void onSuccess() {

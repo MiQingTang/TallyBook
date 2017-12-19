@@ -40,12 +40,10 @@ public class CpInfo extends BmobObject {
      */
     String money;
 
-    public CpInfo(String start, String end, String name, String time, String num) {
+    public CpInfo(String start, String end,  String time, String num) {
         this.start = start;
         this.end = end;
-        this.name = name;
         this.time = time;
-        this.loc = loc;
         this.num = num;
     }
 

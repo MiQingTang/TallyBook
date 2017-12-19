@@ -57,7 +57,11 @@
             android:name="hznu.edu.cn.activity.UserInfoActivity"
             android:label="@string/title_activity_userinfo"
             android:theme="@style/AppTheme" />
-        <activity android:name="hznu.edu.cn.activity.BuyActy"></activity>
+        <activity android:name="hznu.edu.cn.activity.BuyActy" />
+        <activity
+            android:name="hznu.edu.cn.activity.YgddActy"
+            android:label="@string/title_activity_ygdd_acty"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

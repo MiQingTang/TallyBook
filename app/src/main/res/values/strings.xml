@@ -29,4 +29,5 @@
     <string name="title_activity_userinfo">个人中心</string>
     <string name="title_activity_month">余票查询</string>
     <string name="title_activity_budget">已购订单</string>
+    <string name="title_activity_ygdd_acty">YgddActy</string>
 </resources>
