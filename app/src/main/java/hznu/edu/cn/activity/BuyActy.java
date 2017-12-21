@@ -185,6 +185,10 @@ public class BuyActy extends AppCompatActivity {
                 String end = et_end.getText().toString();
                 String time = button2.getText().toString();
                 String type = rb.getText().toString();
+                if (id_flowlayout.getSelectedList().size() == 0) {
+                    Toast.makeText(this, "未选择乘车人！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end) || TextUtils.isEmpty(type) || time.equals("选择日期")) {
                     Toast.makeText(this, "输入错误！", Toast.LENGTH_SHORT).show();

@@ -65,15 +65,6 @@
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\mpandroidchartlibrary-2-2-4_5efcfb79412a3733c6c34c34d5f80105af7fa540.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b8c209f7f84a507f25b92102218fcd80fbb2d770">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9a3d3c6de431c87382afc37644ecaa3db5551a83\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\3ee506511c83fb43e6056d8068cdd48f1944fa44\output\jars\classes.jar"
         jumboMode="false"
@@ -81,15 +72,6 @@
         revision="25.0.0"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_3571fac56ceae51042318100f87f9f137bc89387.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\libs\mpandroidchartlibrary-2-2-4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5455fb794bfcbeb75da252dffd907794614f7fd">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\2\mpandroidchartlibrary-2-2-4_5efcfb79412a3733c6c34c34d5f80105af7fa540\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -117,15 +99,6 @@
         revision="25.0.0"
         sha1="f9cf048337fc945472f258d5541de7ed0994c8c2">
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_1e0e54544fadcb79dd5213dc9ab6bd938fec3a96.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="F:\TallyBook\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e6d7da5131c8b60a072a12846018f309a803416b\classes.dex" />
     </item>
     <item
         is-multidex="false"

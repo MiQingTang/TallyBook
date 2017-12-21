@@ -79,11 +79,17 @@ public class CcrActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.delete_item:
-                for (int i = 0; i < phonedata.size(); i++) {
-                    if (phonedata.get(i).getChecked()) {
-                        phonedata.remove(i);
+                List<ContactsNumber> del = new ArrayList<>();
+                for (ContactsNumber number :
+                        phonedata) {
+                    if (number.getChecked()) {
+                        del.add(number);
                     }
                 }
+                for (int i = 0; i < del.size(); i++) {
+                    phonedata.remove(del.get(i));
+                }
+                del.clear();
                 adapter.notifyDataSetChanged();
                 User user = User.getCurrentUser(User.class);
                 user.getCcr().clear();
