@@ -1,10 +1,12 @@
 package hznu.edu.cn.activity;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * Created by Ssumday on 2017/11/26.
  */
 
-public class ContactsNumber {
+public class ContactsNumber  extends BmobObject{
     private Boolean checked;
     private String name;
     private String phoneNumber;

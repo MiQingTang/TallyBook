@@ -15,34 +15,44 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.administrator.myapplication.R;
 
-public class AddContacts extends AppCompatActivity{
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.UpdateListener;
+import hznu.edu.cn.entity.User;
+
+public class AddContacts extends AppCompatActivity {
     private Button Add;
     private EditText Name;
     private EditText MobilePhone;
-    private MyDatabaseHelper dbHelper;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
-        dbHelper = new MyDatabaseHelper(this,"Phone.db",null,1);
-        Add =(Button)findViewById(R.id.ADD);
-        Name =(EditText)findViewById(R.id.name);
-        MobilePhone=(EditText)findViewById(R.id.phone);
-        Add.setOnClickListener(new View.OnClickListener(){
+        Add = (Button) findViewById(R.id.ADD);
+        Name = (EditText) findViewById(R.id.name);
+        MobilePhone = (EditText) findViewById(R.id.phone);
+        Add.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
+            public void onClick(View v) {
 
-                values.put("name",Name.getText().toString());
-                values.put("phone",MobilePhone.getText().toString());
-                db.insert("phone",null,values);
-                Intent intent=new Intent(AddContacts.this,CcrActivity.class);
-                startActivity(intent);
-                finish();
+
+                User bmobUser = User.getCurrentUser(User.class);
+                ContactsNumber ccr = new ContactsNumber(Name.getText().toString(), MobilePhone.getText().toString());
+                bmobUser.getCcr().add(ccr);
+                bmobUser.update(new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+                        if (e != null) {
+                            Toast.makeText(AddContacts.this, "添加失败，检查网络！" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            finish();
+                        }
+                    }
+                });
             }
         });
     }

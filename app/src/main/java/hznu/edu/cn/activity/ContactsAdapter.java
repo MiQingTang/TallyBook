@@ -15,17 +15,19 @@ import java.util.List;
 
 public class ContactsAdapter extends ArrayAdapter<ContactsNumber> {
     private int resourId;
-    public ContactsAdapter(Context context, int textViewResourceId, List<ContactsNumber> objects){
-        super(context, textViewResourceId ,objects);
-        resourId=textViewResourceId;
+
+    public ContactsAdapter(Context context, int textViewResourceId, List<ContactsNumber> objects) {
+        super(context, textViewResourceId, objects);
+        resourId = textViewResourceId;
     }
+
     @Override
-    public View getView(int position, View conertView, ViewGroup parent){
+    public View getView(int position, View conertView, ViewGroup parent) {
         final ContactsNumber p = getItem(position);
-        View view= LayoutInflater.from(getContext()).inflate(resourId,parent,false);
-        final CheckBox check=(CheckBox) view.findViewById(R.id.phone_checkbox);
-        TextView phonename=(TextView)view.findViewById(R.id.phone_name);
-        TextView phonenumber=(TextView)view.findViewById(R.id.phone_number);
+        View view = LayoutInflater.from(getContext()).inflate(resourId, parent, false);
+        final CheckBox check = (CheckBox) view.findViewById(R.id.phone_checkbox);
+        TextView phonename = (TextView) view.findViewById(R.id.phone_name);
+        TextView phonenumber = (TextView) view.findViewById(R.id.phone_number);
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

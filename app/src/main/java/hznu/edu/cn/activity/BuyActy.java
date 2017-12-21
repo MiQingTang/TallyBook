@@ -113,6 +113,7 @@ public class BuyActy extends AppCompatActivity {
             }
         }
     };
+    private Button button2;
 
 
     @Override
@@ -120,8 +121,10 @@ public class BuyActy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_acty);
         findview();
-        mVals.addAll(User.getCurrentUser(User.class).getCcr());
-
+        List<ContactsNumber> ccr = User.getCurrentUser(User.class).getCcr();
+        for (int i = 0; i < ccr.size(); i++) {
+            mVals.add(ccr.get(i).getName());
+        }
         tagAdapter.notifyDataChanged();
         cp_tagAdapter.notifyDataChanged();
 
@@ -164,6 +167,7 @@ public class BuyActy extends AppCompatActivity {
     private void findview() {
         et_start = (EditText) findViewById(R.id.et_start);
         tag_cp = (TagFlowLayout) findViewById(R.id.textview);
+        button2 = (Button) findViewById(R.id.button2);
         et_end = (EditText) findViewById(R.id.et_end);
         rg_type = (RadioGroup) findViewById(R.id.rg_type);
         id_flowlayout = (TagFlowLayout) findViewById(R.id.id_flowlayout);
@@ -179,10 +183,10 @@ public class BuyActy extends AppCompatActivity {
                 RadioButton rb = (RadioButton) findViewById(rg_type.getCheckedRadioButtonId());
                 String start = et_start.getText().toString();
                 String end = et_end.getText().toString();
-
+                String time = button2.getText().toString();
                 String type = rb.getText().toString();
 
-                if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end) || TextUtils.isEmpty(type)) {
+                if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end) || TextUtils.isEmpty(type) || time.equals("选择日期")) {
                     Toast.makeText(this, "输入错误！", Toast.LENGTH_SHORT).show();
                 } else {
                     cp_mVals.clear();
@@ -242,19 +246,22 @@ public class BuyActy extends AppCompatActivity {
                 dialog.show();
                 break;
             case R.id.textView2://添加乘車人
+                View edit = getLayoutInflater().inflate(R.layout.edit, null);
+                final EditText name = (EditText) edit.findViewById(R.id.et_name);
+                final EditText phone = (EditText) edit.findViewById(R.id.phone);
                 AlertDialog.Builder buidler2 = new AlertDialog.Builder(this);
-                final EditText edittext = new EditText(this);
                 buidler2
                         .setTitle("添加乘车人")
-                        .setView(edittext)
+                        .setView(edit)
                         .setNegativeButton("取消", null)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                mVals.add(edittext.getText().toString());
+                                mVals.add(name.getText().toString());
                                 tagAdapter.notifyDataChanged();
                                 User bmobUser = User.getCurrentUser(User.class);
-                                bmobUser.getCcr().add(edittext.getText().toString());
+                                ContactsNumber ccr = new ContactsNumber(name.getText().toString(), phone.getText().toString());
+                                bmobUser.getCcr().add(ccr);
                                 bmobUser.update(new UpdateListener() {
                                     @Override
                                     public void done(BmobException e) {

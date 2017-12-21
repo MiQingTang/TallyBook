@@ -60,7 +60,7 @@ public class RegActivity extends AbActivity {
         User bu = new User();
         bu.setUsername(username);
         bu.setPassword(pass);
-        bu.setCcr(new ArrayList<String>());
+        bu.setCcr(new ArrayList<ContactsNumber>());
         //注意：不能用save方法进行注册
         bu.signUp(new SaveListener<User>() {
             @Override

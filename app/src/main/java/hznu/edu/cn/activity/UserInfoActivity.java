@@ -38,47 +38,7 @@ public class UserInfoActivity extends AbActivity {
     EditText againpass;
     @ViewInject(R.id.oldpassword)
     EditText oldpassword;
-    List<String> mVals = new ArrayList<String>();
-    private TagAdapter tagAdapter = new TagAdapter<String>(mVals) {
-        @Override
-        public View getView(FlowLayout parent, int position, String s) {
-            TextView tv = new TextView(UserInfoActivity.this);
-            tv.setPadding(10, 10, 10, 10);
-            tv.setText(s);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                tv.setBackground(getDrawable(R.drawable.normal_bg));
-            }
-            return tv;
-        }
 
-        @Override
-        public void onSelected(int position, View view) {
-            super.onSelected(position, view);
-            mVals.remove(position);
-            tagAdapter.notifyDataChanged();
-            User bmobUser = User.getCurrentUser(User.class);
-            bmobUser.getCcr().remove(position);
-            bmobUser.update(new UpdateListener() {
-                @Override
-                public void done(BmobException e) {
-                    if (e != null) {
-                        Toast.makeText(UserInfoActivity.this, "请检查网络！" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    } else {
-
-                    }
-                }
-            });
-        }
-
-        @Override
-        public void unSelected(int position, View view) {
-            super.unSelected(position, view);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                view.setBackground(getDrawable(R.drawable.normal_bg));
-            }
-        }
-    };
-    private TagFlowLayout id_flowlayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,16 +46,11 @@ public class UserInfoActivity extends AbActivity {
         setContentView(R.layout.activity_user_info);
 
         x.view().inject(this);
-
-        mVals.addAll(User.getCurrentUser(User.class).getCcr());
-        id_flowlayout = (TagFlowLayout) findViewById(R.id.id_flowlayout);
-        id_flowlayout.setAdapter(tagAdapter);
-        tagAdapter.notifyDataChanged();
     }
 
     @Event(value = {
             R.id.button_update_password,
-            R.id.textView2,
+            R.id.button_ccr,
             R.id.button_exit},
             type = View.OnClickListener.class)
     private void onClick(View view) {
@@ -106,31 +61,32 @@ public class UserInfoActivity extends AbActivity {
             case R.id.button_update_password:
                 updatePass();
                 break;
-            case R.id.textView2:
-                AlertDialog.Builder buidler2 = new AlertDialog.Builder(this);
-                final EditText edittext = new EditText(this);
-                buidler2
-                        .setTitle("添加乘车人")
-                        .setView(edittext)
-                        .setNegativeButton("取消", null)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mVals.add(edittext.getText().toString());
-                                tagAdapter.notifyDataChanged();
-                                User bmobUser = User.getCurrentUser(User.class);
-                                bmobUser.getCcr().add(edittext.getText().toString());
-                                bmobUser.update(new UpdateListener() {
-                                    @Override
-                                    public void done(BmobException e) {
-                                        if (e != null) {
-                                            Toast.makeText(UserInfoActivity.this, "添加失败，检查网络！", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            }
-                        })
-                        .create().show();
+            case R.id.button_ccr:
+                startActivity(new Intent(this, CcrActivity.class));
+//                AlertDialog.Builder buidler2 = new AlertDialog.Builder(this);
+//                final EditText edittext = new EditText(this);
+//                buidler2
+//                        .setTitle("添加乘车人")
+//                        .setView(edittext)
+//                        .setNegativeButton("取消", null)
+//                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                mVals.add(edittext.getText().toString());
+//                                tagAdapter.notifyDataChanged();
+//                                User bmobUser = User.getCurrentUser(User.class);
+//                                bmobUser.getCcr().add(edittext.getText().toString());
+//                                bmobUser.update(new UpdateListener() {
+//                                    @Override
+//                                    public void done(BmobException e) {
+//                                        if (e != null) {
+//                                            Toast.makeText(UserInfoActivity.this, "添加失败，检查网络！", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    }
+//                                });
+//                            }
+//                        })
+//                        .create().show();
                 break;
         }
 
