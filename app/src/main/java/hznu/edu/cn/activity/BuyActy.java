@@ -33,6 +33,7 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 import hznu.edu.cn.constans.Cfg;
@@ -55,6 +56,7 @@ public class BuyActy extends AppCompatActivity {
         @Override
         public View getView(FlowLayout parent, int position, String s) {
             TextView tv = new TextView(BuyActy.this);
+            tv.setPadding(10, 10, 10, 10);
             tv.setText(s);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 tv.setBackground(getDrawable(R.drawable.normal_bg));
@@ -86,6 +88,8 @@ public class BuyActy extends AppCompatActivity {
         @Override
         public View getView(FlowLayout parent, int position, CpInfo cpInfo) {
             TextView tv = new TextView(BuyActy.this);
+            tv.setPadding(10, 10, 10, 10);
+            tv.setTextSize(10);
             tv.setText(cpInfo.toString());
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 tv.setBackground(getDrawable(R.drawable.normal_bg));
@@ -116,7 +120,8 @@ public class BuyActy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_acty);
         findview();
-        mVals.addAll(User.getCurrentUser(BuyActy.this, User.class).getCcr());
+        mVals.addAll(User.getCurrentUser(User.class).getCcr());
+
         tagAdapter.notifyDataChanged();
         cp_tagAdapter.notifyDataChanged();
 
@@ -174,13 +179,15 @@ public class BuyActy extends AppCompatActivity {
                 RadioButton rb = (RadioButton) findViewById(rg_type.getCheckedRadioButtonId());
                 String start = et_start.getText().toString();
                 String end = et_end.getText().toString();
-                int num = (int) (Math.random() * 1000);
+
                 String type = rb.getText().toString();
 
                 if (TextUtils.isEmpty(start) || TextUtils.isEmpty(end) || TextUtils.isEmpty(type)) {
                     Toast.makeText(this, "输入错误！", Toast.LENGTH_SHORT).show();
                 } else {
+                    cp_mVals.clear();
                     for (int i = 0; i < (int) (Math.random() * 2) + 1; i++) {
+                        int num = (int) (Math.random() * 1000);
                         CpInfo info = new CpInfo(
                                 start,
                                 end,
@@ -195,18 +202,22 @@ public class BuyActy extends AppCompatActivity {
                 }
                 break;
             case R.id.button4://订
-                String num1 = cp_mVals.get(tag_cp.getSelectedList().iterator().next()).getNum();
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("确认订购[" + num1 + "]这一车次的车票吗？")
-                        .setTitle("提示")
-                        .setNegativeButton("再看看", null)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                buy();
-                            }
-                        })
-                        .create().show();
+                for (int a :
+                        tag_cp.getSelectedList()) {
+                    String num1 = cp_mVals.get(a).getNum();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("确认订购[" + num1 + "]这一车次的车票吗？")
+                            .setTitle("提示")
+                            .setNegativeButton("再看看", null)
+                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    buy();
+                                }
+                            })
+                            .create().show();
+                }
+
                 break;
             case R.id.button2://日期
                 final Button button = (Button) view;
@@ -242,17 +253,14 @@ public class BuyActy extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 mVals.add(edittext.getText().toString());
                                 tagAdapter.notifyDataChanged();
-                                User bmobUser = User.getCurrentUser(BuyActy.this, User.class);
+                                User bmobUser = User.getCurrentUser(User.class);
                                 bmobUser.getCcr().add(edittext.getText().toString());
-                                bmobUser.update(BuyActy.this, new UpdateListener() {
+                                bmobUser.update(new UpdateListener() {
                                     @Override
-                                    public void onSuccess() {
-                                        Toast.makeText(BuyActy.this, "添加成功", Toast.LENGTH_SHORT).show();
-                                    }
-
-                                    @Override
-                                    public void onFailure(int code, String msg) {
-                                        Toast.makeText(BuyActy.this, "添加失败" + msg, Toast.LENGTH_SHORT).show();
+                                    public void done(BmobException e) {
+                                        if (e != null) {
+                                            Toast.makeText(BuyActy.this, "添加失败，检查网络！", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 });
                             }
@@ -270,30 +278,30 @@ public class BuyActy extends AppCompatActivity {
             CpInfo info = cp_mVals.get(i);
             for (int j :
                     id_flowlayout.getSelectedList()) {
-                info.setMoney("¥" + Math.random() * 300 + 100);
+                info.setUserid(User.getCurrentUser().getUsername());
+                info.setMoney("¥" + ((int) (Math.random() * 300 + 100)));
                 info.setName(mVals.get(j));
-                info.setLoc((Math.random() * 20 + 1) + "车" + (Math.random() * 90 + 1) + "A");
-                info.save(BuyActy.this, new SaveListener() {
+                info.setLoc((((int) (Math.random() * 20 + 1))) + "车" + (((int) (Math.random() * 90 + 1))) + "A");
+                info.save(new SaveListener<String>() {
                     @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onFailure(int i, String s) {
-
+                    public void done(String s, BmobException e) {
+                        if (e == null) {
+                            Toast.makeText(BuyActy.this, "正在支付！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BuyActy.this, "您已经订购成功！", Toast.LENGTH_SHORT).show();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    finish();
+                                }
+                            }, 2000);
+                        } else {
+                            Toast.makeText(BuyActy.this, "订购失败，检查网络！" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }
         }
 
-        Toast.makeText(BuyActy.this, "正在支付！", Toast.LENGTH_SHORT).show();
-        Toast.makeText(BuyActy.this, "您已经订购成功！", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                finish();
-            }
-        }, 2000);
+
     }
 }

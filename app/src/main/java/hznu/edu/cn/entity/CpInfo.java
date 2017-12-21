@@ -8,6 +8,10 @@ import cn.bmob.v3.BmobObject;
 
 public class CpInfo extends BmobObject {
     /**
+     * 在那个账户下买的
+     */
+    String userid;
+    /**
      * 起点
      */
     String start;
@@ -40,11 +44,22 @@ public class CpInfo extends BmobObject {
      */
     String money;
 
-    public CpInfo(String start, String end,  String time, String num) {
+    public CpInfo() {
+    }
+
+    public CpInfo(String start, String end, String time, String num) {
         this.start = start;
         this.end = end;
         this.time = time;
         this.num = num;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getMoney() {

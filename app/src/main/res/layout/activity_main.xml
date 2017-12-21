@@ -1,55 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/huoche"
     tools:context="hznu.edu.cn.activity.MainActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <TextView
+        android:id="@+id/tv_ygdd"
+        style="@style/main_textview_style"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="订单" />
 
-        <TextView
-            android:id="@+id/tv_ygdd"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="已购\n订单" />
+    <TextView
+        android:id="@+id/tv_dp"
+        style="@style/main_textview_style"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_ygdd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="购票" />
 
-        <TextView
-            android:id="@+id/tv_ypcx"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="余票\n查询" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/tv_dp"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="我要\n订票" />
-
-        <TextView
-            android:id="@+id/tv_userinfo"
-            style="@style/main_textview_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="个人\n中心" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_userinfo"
+        style="@style/main_textview_style"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="我的" />
 
 
-</LinearLayout>
+</RelativeLayout>

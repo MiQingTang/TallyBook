@@ -28,7 +28,7 @@ public class MainActivity extends AbActivity {
     protected void onResume() {
         super.onResume();
         //获得
-        if (BmobUser.getCurrentUser(this) == null) {
+        if (BmobUser.getCurrentUser() == null) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -37,15 +37,12 @@ public class MainActivity extends AbActivity {
     }
 
     @Event(value = {
-            R.id.tv_ypcx,
             R.id.tv_ygdd,
             R.id.tv_dp,
             R.id.tv_userinfo
     }, type = View.OnClickListener.class)
     private void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_ypcx:
-                break;
             case R.id.tv_ygdd:
                 startActivity(new Intent(this, YgddActy.class));
                 break;

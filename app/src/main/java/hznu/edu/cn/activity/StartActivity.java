@@ -29,7 +29,7 @@ public class StartActivity extends AppCompatActivity {
             public void run() {
                 Intent intent;
                 //判断需不需要登录
-                if (BmobUser.getCurrentUser(StartActivity.this) == null) {
+                if (BmobUser.getCurrentUser() == null) {
                     intent = new Intent(StartActivity.this, LoginActivity.class);
                 } else {
                     intent = new Intent(StartActivity.this, MainActivity.class);

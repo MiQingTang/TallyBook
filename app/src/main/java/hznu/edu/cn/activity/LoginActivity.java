@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.administrator.myapplication.R;
+
+import cn.bmob.v3.exception.BmobException;
 import hznu.edu.cn.utils.L;
 
 import org.xutils.view.annotation.Event;
@@ -48,25 +50,20 @@ public class LoginActivity extends AbActivity {
         BmobUser bu2 = new BmobUser();
         bu2.setUsername(user);
         bu2.setPassword(pass);
-        bu2.login(LoginActivity.this, new SaveListener() {
+        bu2.login(new SaveListener<Object>() {
             @Override
-            public void onSuccess() {
-                Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
-                //通过BmobUser user = BmobUser.getCurrentUser(context)获取登录成功后的本地用户信息
-                //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(context,MyUser.class)获取自定义用户信息
-                //跳转到Mainactivity（主页面）
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-            @Override
-            public void onFailure(int code, String msg) {
-                L.d("登录:code=" + code + "msg=" + msg);
-                if (code == 101) {
-                    msg = "用户名或密码错误！";
+            public void done(Object o, BmobException e) {
+                if (e == null) {
+                    Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                    //通过BmobUser user = BmobUser.getCurrentUser(context)获取登录成功后的本地用户信息
+                    //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(context,MyUser.class)获取自定义用户信息
+                    //跳转到Mainactivity（主页面）
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, "登录失败," + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(LoginActivity.this, "登录失败," + msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

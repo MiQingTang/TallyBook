@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.administrator.myapplication.R;
 
+import cn.bmob.v3.exception.BmobException;
 import hznu.edu.cn.entity.User;
 import hznu.edu.cn.utils.L;
 
@@ -61,23 +62,23 @@ public class RegActivity extends AbActivity {
         bu.setPassword(pass);
         bu.setCcr(new ArrayList<String>());
         //注意：不能用save方法进行注册
-        bu.signUp(this, new SaveListener() {
+        bu.signUp(new SaveListener<User>() {
             @Override
-            public void onSuccess() {
-                Toast.makeText(RegActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                //通过BmobUser.getCurrentUser(context)方法获取登录成功后的本地用户信息
-                //返回
-                finish();
+            public void done(User user, BmobException e) {
+
+                if (e == null) {
+                    Toast.makeText(RegActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    //通过BmobUser.getCurrentUser(context)方法获取登录成功后的本地用户信息
+                    //返回
+                    finish();
+                } else {
+
+                    Toast.makeText(RegActivity.this, "注册失败," + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+
             }
 
-            @Override
-            public void onFailure(int code, String msg) {
-                if (code == 202) {
-                    msg = "该用户已经被注册！";
-                }
-                Toast.makeText(RegActivity.this, "注册失败," + msg, Toast.LENGTH_SHORT).show();
-                L.d("注册:code=" + code + "msg=" + msg);
-            }
         });
     }
 }

@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\gson-2.6.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
-        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okio-1.4.0_a05532bc788a554b357d24e9f35162ad99c67f00.jar" />
+        sha1="cea3a9be08d0dcf89783b2cc87c8787fdb2a0d12">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\gson-2.6.2_5c213c81c89ddab185eb8ecfbd424f275e0ff5c6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -27,6 +27,15 @@
         revision="25.0.0"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_dc72eca95184a7535382284ffd9012fba6dce516.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\BmobSDK_3.5.5_20170420.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f67cfc97fcbde8b4764f01135b10afa716ae1a40">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\BmobSDK_3.5.5_20170420_0312882383709a88e2ec280bbd4c275003809d1a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -61,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="76197f4970c6c092a149d1e57d1091b5ee4c173e">
+        sha1="8ddd3cd2b647a1d49abdaaae1d4639937aa44f4f">
         <dex dex="F:\TallyBook\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9a3d3c6de431c87382afc37644ecaa3db5551a83\classes.dex" />
     </item>
     <item
@@ -93,6 +102,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\okio-1.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f64e0f80ef26fbc722b4bc9f024370d5b1e8f6d6">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okio-1.7.0_ae5fb3926341fb256b2882a027fc91b37b9f206b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrator\.android\build-cache\a26d5c92cfabeeb35868ed25f67c59f5acadeb73\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -111,30 +129,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
-        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\gson-2.8.2_6f92e0bc9cc6edb2f6dfe23a3b24d6c5a560f179.jar" />
+        sha1="ac71d1248d0f3577b39093396e6ff35582a5d7a4">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\classes_8489598bec57eb7a6676701472b2d1dd56fcc419.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\rxjava-1.1.6.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
-        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0_1a88588d86205825a3225019b657d26fc4d4e22f.jar" />
+        sha1="79f0c1e382e8b62e91064ef6b71130dda83f338e">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\rxjava-1.1.6_204392aafcc52829909e4a7b9ff94c376cd50b4f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.bmob.android\bmob-sdk\3.4.6\41f54bb2846705eea0de5df48ddbcba378bd54e5\bmob-sdk-3.4.6.jar"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\okhttp-3.3.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="41f54bb2846705eea0de5df48ddbcba378bd54e5">
-        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\bmob-sdk-3.4.6_7d7e4f9bf21d91854ea3a5666e6b0fc585868498.jar" />
+        sha1="e009af854d43130a9a13bcba900ddd1124e835d5">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\okhttp-3.3.1_60d052ee5c505d4990dc014387bf5f63f96d4dbe.jar" />
     </item>
     <item
         is-multidex="false"
@@ -180,6 +198,15 @@
         revision="25.0.0"
         sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
         <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_fc69c3b77672ffaa69e2aed4d339844152d221a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\8e907f67a51f017010d05ce184ef9477691cc81a\output\jars\libs\rxandroid-1.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="84127ad71f76445b8215afceb38e8b05f58eafa6">
+        <dex dex="F:\TallyBook\app\build\intermediates\pre-dexed\debug\rxandroid-1.2.0_d98fc80ad0c81721aca527f459ab9bc51bc292ac.jar" />
     </item>
 
 </items>
