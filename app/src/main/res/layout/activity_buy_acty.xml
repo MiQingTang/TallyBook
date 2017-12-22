@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:background="@drawable/a1"
     tools:context="hznu.edu.cn.activity.BuyActy">
 
     <LinearLayout
@@ -64,10 +64,10 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
-        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_above="@+id/id_flowlayout"
         android:layout_below="@+id/button2"
+        android:gravity="center"
         android:text="选择乘车人"></TextView>>
 
     <com.zhy.view.flowlayout.TagFlowLayout

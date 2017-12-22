@@ -193,6 +193,10 @@ public class BuyActy extends AppCompatActivity {
                 String end = et_end.getText().toString();
                 String time = button2.getText().toString();
                 String type = rb.getText().toString();
+                if ( time.equals("选择日期")) {
+                    Toast.makeText(this, "未选择日期！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (id_flowlayout.getSelectedList().size() == 0) {
                     Toast.makeText(this, "未选择乘车人！", Toast.LENGTH_SHORT).show();
                     return;
@@ -204,10 +208,11 @@ public class BuyActy extends AppCompatActivity {
                     cp_mVals.clear();
                     for (int i = 0; i < (int) (Math.random() * 2) + 1; i++) {
                         int num = (int) (Math.random() * 1000);
+
                         CpInfo info = new CpInfo(
                                 start,
                                 end,
-                                start + "5:31分出发\n" + end + "19:62到达",
+                                start + getRandom(0, 12) + ":" + getRandom(10, 60) + "分出发\n" + end + getRandom(12, 24) + ":" + getRandom(10, 60) + "到达",
                                 "G" + num
                         );
                         info.setType(type);
@@ -218,6 +223,10 @@ public class BuyActy extends AppCompatActivity {
                 }
                 break;
             case R.id.button4://订
+                if (tag_cp.getSelectedList().size() == 0) {
+                    Toast.makeText(this, "请选择车票！", Toast.LENGTH_SHORT).show();
+                    break;
+                }
                 for (int a :
                         tag_cp.getSelectedList()) {
                     String num1 = cp_mVals.get(a).getNum();
@@ -295,11 +304,12 @@ public class BuyActy extends AppCompatActivity {
 
     }
 
+    private int getRandom(int i, int i1) {
+        return ((int) (Math.random() * (i1 - i) + i));
+    }
+
     private void buy() {
-        if (tag_cp.getSelectedList().size() == 0) {
-            Toast.makeText(this, "请选择车票！", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
         for (int i : tag_cp.getSelectedList()) {
             CpInfo info = cp_mVals.get(i);
             for (int j :
