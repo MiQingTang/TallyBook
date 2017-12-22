@@ -64,7 +64,9 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
+        android:gravity="center"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/id_flowlayout"
         android:layout_below="@+id/button2"
         android:text="选择乘车人"></TextView>>
 
@@ -72,7 +74,7 @@
         android:id="@+id/id_flowlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text"
+        android:layout_below="@+id/textView2"
         android:padding="10dp"
         app:max_select="-1"></com.zhy.view.flowlayout.TagFlowLayout>
 
@@ -107,15 +109,15 @@
         android:onClick="onClick"
         android:text="订购" />
 
-    <TextView
+    <Button
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button2"
+        android:gravity="center"
         android:onClick="onClick"
-        android:text="添加乘车人"
-        android:textColor="@color/colorPrimary" />
+        android:text="添加乘车人" />
 
     <RadioGroup
         android:id="@+id/rg_type"

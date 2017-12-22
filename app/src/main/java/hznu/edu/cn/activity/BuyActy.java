@@ -3,6 +3,7 @@ package hznu.edu.cn.activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -120,14 +121,21 @@ public class BuyActy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_acty);
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         findview();
         List<ContactsNumber> ccr = User.getCurrentUser(User.class).getCcr();
+        mVals.clear();
         for (int i = 0; i < ccr.size(); i++) {
             mVals.add(ccr.get(i).getName());
         }
         tagAdapter.notifyDataChanged();
         cp_tagAdapter.notifyDataChanged();
-
     }
 
     private void query(String start, String end, String date) {
@@ -250,33 +258,36 @@ public class BuyActy extends AppCompatActivity {
                 dialog.show();
                 break;
             case R.id.textView2://添加乘車人
-                View edit = getLayoutInflater().inflate(R.layout.edit, null);
-                final EditText name = (EditText) edit.findViewById(R.id.et_name);
-                final EditText phone = (EditText) edit.findViewById(R.id.phone);
-                AlertDialog.Builder buidler2 = new AlertDialog.Builder(this);
-                buidler2
-                        .setTitle("添加乘车人")
-                        .setView(edit)
-                        .setNegativeButton("取消", null)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mVals.add(name.getText().toString());
-                                tagAdapter.notifyDataChanged();
-                                User bmobUser = User.getCurrentUser(User.class);
-                                ContactsNumber ccr = new ContactsNumber(name.getText().toString(), phone.getText().toString());
-                                bmobUser.getCcr().add(ccr);
-                                bmobUser.update(new UpdateListener() {
-                                    @Override
-                                    public void done(BmobException e) {
-                                        if (e != null) {
-                                            Toast.makeText(BuyActy.this, "添加失败，检查网络！", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            }
-                        })
-                        .create().show();
+
+                startActivity(new Intent(this, CcrActivity.class));
+//
+//                View edit = getLayoutInflater().inflate(R.layout.edit, null);
+//                final EditText name = (EditText) edit.findViewById(R.id.et_name);
+//                final EditText phone = (EditText) edit.findViewById(R.id.phone);
+//                AlertDialog.Builder buidler2 = new AlertDialog.Builder(this);
+//                buidler2
+//                        .setTitle("添加乘车人")
+//                        .setView(edit)
+//                        .setNegativeButton("取消", null)
+//                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                mVals.add(name.getText().toString());
+//                                tagAdapter.notifyDataChanged();
+//                                User bmobUser = User.getCurrentUser(User.class);
+//                                ContactsNumber ccr = new ContactsNumber(name.getText().toString(), phone.getText().toString());
+//                                bmobUser.getCcr().add(ccr);
+//                                bmobUser.update(new UpdateListener() {
+//                                    @Override
+//                                    public void done(BmobException e) {
+//                                        if (e != null) {
+//                                            Toast.makeText(BuyActy.this, "添加失败，检查网络！", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    }
+//                                });
+//                            }
+//                        })
+//                        .create().show();
                 break;
             default:
                 break;
@@ -285,6 +296,10 @@ public class BuyActy extends AppCompatActivity {
     }
 
     private void buy() {
+        if (tag_cp.getSelectedList().size() == 0) {
+            Toast.makeText(this, "请选择车票！", Toast.LENGTH_SHORT).show();
+            return;
+        }
         for (int i : tag_cp.getSelectedList()) {
             CpInfo info = cp_mVals.get(i);
             for (int j :
